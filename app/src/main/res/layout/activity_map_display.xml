@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="activities.MapDisplayActivity">
+
+    <LinearLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/imageBack"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_back"
+            app:tint="@color/colorTextIcons" />
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/sf_bold"
+            android:includeFontPadding="false"
+            android:textColor="@color/colorTextIcons"
+            android:textSize="@dimen/_12ssp"
+            android:textAlignment="textEnd"
+            android:layout_marginEnd="@dimen/_8sdp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/searchBox"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/layoutHeader">
+
+        <EditText
+            android:background="@drawable/border"
+            android:hint="Enter location name"
+            android:id="@+id/textSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:paddingStart="@dimen/_10sdp"
+            android:importantForAutofill="no"
+            android:imeOptions="actionDone"
+            android:fontFamily="@font/sf_regular"
+            android:includeFontPadding="false"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/_12ssp" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:text="@string/search"
+            android:textSize="@dimen/_10ssp"
+            android:id="@+id/buttonSearch"
+            android:layout_marginStart="@dimen/_10sdp"/>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/mapType"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:background="@color/colorTextIcons"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_2sdp"
+        android:paddingEnd="@dimen/_2sdp"
+        app:layout_constraintTop_toBottomOf="@id/searchBox">
+
+        <TextView
+
+            android:id="@+id/textMapType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:fontFamily="@font/sf_bold"
+            android:includeFontPadding="false"
+            android:text="@string/map_type"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/_11ssp"
+            android:layout_marginEnd="@dimen/_8sdp"/>
+        <TextView
+            android:id="@+id/textDefaults"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/sf_medium"
+            android:includeFontPadding="false"
+            android:text="Default"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/_11ssp"
+            android:layout_marginEnd="@dimen/_8sdp"/>
+        <TextView
+            android:id="@+id/textSatellite"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/sf_medium"
+            android:includeFontPadding="false"
+            android:text="@string/satellite"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/_11ssp"
+            android:layout_marginEnd="@dimen/_8sdp"/>
+        <TextView
+            android:id="@+id/textTerrain"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/sf_medium"
+            android:includeFontPadding="false"
+            android:text="@string/terrain"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/_11ssp"
+            android:layout_marginEnd="@dimen/_8sdp"/>
+
+    </LinearLayout>
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_120sdp"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

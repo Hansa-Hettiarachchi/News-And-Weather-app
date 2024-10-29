@@ -1,0 +1,2010 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background"
+    tools:context=".activities.ForcastCurrentLocationActivity">
+
+    <LinearLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/imageBack"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_back"
+            app:tint="@color/colorTextIcons" />
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/sf_bold"
+            android:includeFontPadding="false"
+            android:textColor="@color/colorTextIcons"
+            android:textSize="@dimen/_12ssp"
+            android:textAlignment="textEnd"
+            android:layout_marginEnd="@dimen/_8sdp"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/_30sdp">
+
+            <TextView
+                android:id="@+id/topic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:fontFamily="@font/sf_bold"
+                android:gravity="center"
+                android:text="@string/upcoming_5_days_weather_forecast_data_with_3_hour_step"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="@dimen/_15sdp" />
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginStart="@dimen/_20sdp"-->
+<!--                android:layout_marginTop="@dimen/_10sdp"-->
+<!--                android:layout_marginEnd="@dimen/_20sdp"-->
+<!--                android:fontFamily="@font/sf_regular"-->
+<!--                android:gravity="center"-->
+<!--                android:text="@string/all_times_are_shown_according_that_place_gmt_time_to_convert_it_to_your_time_please_add_the_time_zone"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textColor="@color/colorPrimaryText"-->
+<!--                android:textSize="@dimen/_9sdp" />-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_30sdp">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                app:cardCornerRadius="@dimen/_15sdp"
+                app:layout_constraintTop_toBottomOf="@+id/topic">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/cityBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/topic">
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingTop="@dimen/_10sdp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sf_bold"
+                                android:text="@string/time_zone"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/dataReceivedTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:fontFamily="@font/sf_medium"
+                                android:text="@string/unknown"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/cityName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:fontFamily="@font/sf_bold"
+                            android:gravity="center"
+                            android:text="@string/unknown"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimaryText"
+                            android:textSize="@dimen/_22sdp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/_8sdp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sf_bold"
+                                android:text="@string/country_code"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/countryCode"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:fontFamily="@font/sf_medium"
+                                android:text="@string/unknown"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/selector"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toBottomOf="@id/cityBar">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Next"
+                            android:fontFamily="@font/sf_bold"
+                            android:textColor="@color/colorPrimaryText"
+                            android:layout_marginEnd="@dimen/_10sdp"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card1"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            app:cardCornerRadius="@dimen/_1sdp" >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="1 Day"
+                                android:background="@color/colorPrimary"
+                                android:textColor="@color/colorTextIcons"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:fontFamily="@font/sf_bold"/>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card2"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            app:cardCornerRadius="@dimen/_1sdp" >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="2 Day"
+                                android:background="@color/colorPrimary"
+                                android:textColor="@color/colorTextIcons"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:fontFamily="@font/sf_bold"/>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card3"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            app:cardCornerRadius="@dimen/_1sdp" >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="3 Day"
+                                android:background="@color/colorPrimary"
+                                android:textColor="@color/colorTextIcons"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:fontFamily="@font/sf_bold"/>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card4"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            app:cardCornerRadius="@dimen/_1sdp" >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="4 Day"
+                                android:background="@color/colorPrimary"
+                                android:textColor="@color/colorTextIcons"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:fontFamily="@font/sf_bold"/>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card5"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            app:cardCornerRadius="@dimen/_1sdp">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="5 Day"
+                                android:background="@color/colorPrimary"
+                                android:textColor="@color/colorTextIcons"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:fontFamily="@font/sf_bold"/>
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:id="@+id/test"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/selector">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardShow1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            android:backgroundTint="#00000000"
+                            android:visibility="visible"
+                            app:cardCornerRadius="@dimen/_15sdp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="@dimen/_10sdp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one111"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one112"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one113"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one121"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one122"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one123"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one131"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one132"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one133"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one141"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one142"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one143"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one151"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one152"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one153"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one161"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one162"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one163"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one171"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one172"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one173"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one181"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one182"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one183"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardShow2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            android:backgroundTint="#00000000"
+                            android:visibility="invisible"
+
+                            app:cardCornerRadius="@dimen/_15sdp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="@dimen/_10sdp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one211"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one212"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one213"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one221"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one222"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one223"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one231"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one232"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one233"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one241"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one242"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one243"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one251"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one252"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one253"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one261"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one262"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one263"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one271"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one272"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one273"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one281"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one282"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one283"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardShow3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            android:backgroundTint="#00000000"
+                            android:visibility="invisible"
+
+                            app:cardCornerRadius="@dimen/_15sdp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="@dimen/_10sdp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one311"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one312"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one313"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one321"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one322"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one323"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one331"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one332"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one333"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one341"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one342"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one343"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one351"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one352"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one353"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one361"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one362"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one363"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one371"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one372"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one373"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one381"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one382"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one383"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardShow4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            android:backgroundTint="#00000000"
+                            android:visibility="invisible"
+
+                            app:cardCornerRadius="@dimen/_15sdp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="@dimen/_10sdp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one411"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one412"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one413"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one421"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one422"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one423"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one431"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one432"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one433"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one441"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one442"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one443"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one451"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one452"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one453"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one461"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one462"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one463"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one471"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one472"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one473"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one481"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one482"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one483"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardShow5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            android:backgroundTint="#00000000"
+                            android:visibility="invisible"
+
+                            app:cardCornerRadius="@dimen/_15sdp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="@dimen/_10sdp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one511"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one512"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one513"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one521"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one522"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one523"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one531"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one532"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one533"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one541"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:id="@+id/one542"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one543"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one551"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one552"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one553"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one561"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one562"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one563"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one571"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one572"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one573"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/one581"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one582"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_bold"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                    <TextView
+                                        android:id="@+id/one583"
+                                        android:gravity="center"
+                                        android:fontFamily="@font/sf_medium"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/unknown" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </FrameLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

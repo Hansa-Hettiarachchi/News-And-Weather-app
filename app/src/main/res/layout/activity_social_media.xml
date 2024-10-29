@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background"
+    tools:context=".activities.SocialMediaActivity">
+
+    <LinearLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/imageBack"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_back"
+            app:tint="@color/colorTextIcons" />
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/sf_bold"
+            android:includeFontPadding="false"
+            android:textColor="@color/colorTextIcons"
+            android:textSize="@dimen/_12ssp"
+            android:textAlignment="textEnd"
+            android:layout_marginEnd="@dimen/_8sdp"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/cardView2"
+        app:layout_constraintTop_toBottomOf="@id/layoutHeader">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader"
+        tools:ignore="UseCompoundDrawables"
+        android:id="@+id/nameTag">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="4dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/travelmate" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/sf_bold"
+            android:text="TravelMate"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchView1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:queryHint="UserName or location"
+                app:layout_constraintTop_toBottomOf="@id/layoutHeader"
+                android:background="@drawable/search_view_bg"
+                android:backgroundTint="@color/colorTextIcons"
+                app:iconifiedByDefault="false"
+
+                />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/nameTag"
+        android:layout_marginBottom="@dimen/_10sdp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:backgroundTint="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/homeImg"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="4dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/home"
+                app:tint="@color/colorTextIcons" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/homeText"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginStart="1dp"-->
+<!--                android:fontFamily="@font/sf_bold"-->
+<!--                android:text="HOME"-->
+<!--                android:textColor="@color/colorTextIcons"-->
+<!--                android:textSize="@dimen/_12sdp"-->
+<!--                android:textStyle="bold" />-->
+
+            <ImageView
+                android:id="@+id/addImg"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_60sdp"
+                android:layout_marginEnd="4dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_add_image"
+                app:tint="@color/colorTextIcons" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/addText"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:fontFamily="@font/sf_bold"-->
+<!--                android:text="ADD NEW"-->
+<!--                android:textColor="@color/colorTextIcons"-->
+<!--                android:textSize="@dimen/_12sdp"-->
+<!--                android:textStyle="bold" />-->
+
+            <ImageView
+                android:id="@+id/accountImg"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_60sdp"
+                android:layout_marginEnd="4dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/account"
+                app:tint="@color/colorTextIcons" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/accountText"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:fontFamily="@font/sf_bold"-->
+<!--                android:text="ADD NEW"-->
+<!--                android:textColor="@color/colorTextIcons"-->
+<!--                android:textSize="@dimen/_12sdp"-->
+<!--                android:textStyle="bold" />-->
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

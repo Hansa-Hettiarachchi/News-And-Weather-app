@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1037641013787",
+    "project_id": "travelguidassistant-27663",
+    "storage_bucket": "travelguidassistant-27663.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037641013787:android:18e6d3b44da29b952b76be",
+        "android_client_info": {
+          "package_name": "com.example.trvavelguidassistant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1037641013787-r8g0iorniottoo3kgpskth8v25ol9hud.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACJCujV0xDMnQXpsdN-EmqXA84VJXBFs8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1037641013787-r8g0iorniottoo3kgpskth8v25ol9hud.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

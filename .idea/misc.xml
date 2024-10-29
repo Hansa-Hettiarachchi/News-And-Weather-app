@@ -1,0 +1,72 @@
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/drawable-v24/ic_back.xml" value="0.1" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/drawable-v24/ic_person.xml" value="0.1" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/drawable-v24/main_background.xml" value="0.1" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/drawable-v24/search_view_bg.xml" value="0.2" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/drawable/background.xml" value="0.187" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/drawable/black_background.xml" value="0.211" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/drawable/border.xml" value="0.2075" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/drawable/border2.xml" value="0.217" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/drawable/buttondesign.xml" value="0.2025" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/drawable/edittextdesign.xml" value="0.2025" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/drawable/gradient.xml" value="0.211" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/drawable/ic_search.xml" value="0.1725" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/drawable/main_background.xml" value="0.1675" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/drawable/news_items.xml" value="0.211" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_add_new_event.xml" value="0.25181159420289856" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_add_social_media.xml" value="0.24592391304347827" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_detailed_news.xml" value="0.24592391304347827" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_direction.xml" value="0.2513586956521739" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_edit_user_profile.xml" value="0.259375" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_email_verification.xml" value="0.259375" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_forcast_city_weather.xml" value="0.2" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_forcast_current_location.xml" value="0.264" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_forgot_password.xml" value="0.259375" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_identify_language.xml" value="0.2453125" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_loading.xml" value="0.264" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_map_display.xml" value="0.2" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_maps.xml" value="0.259375" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_news.xml" value="0.24592391304347827" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_scheduler.xml" value="0.24139492753623187" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_select_sign.xml" value="0.25679347826086957" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_selected_log.xml" value="0.259375" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_settings.xml" value="0.264" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_sign_in.xml" value="0.264" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_social_media.xml" value="0.24592391304347827" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_social_media_account.xml" value="0.24592391304347827" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_text_recognition.xml" value="0.259375" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_translator.xml" value="0.264" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_travel_log_menu.xml" value="0.259375" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_travel_log_upload_new.xml" value="0.264" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_travel_log_view_old.xml" value="0.264" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_view_today_event.xml" value="0.25181159420289856" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_weak.xml" value="0.25181159420289856" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_weather_city.xml" value="0.2" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_weather_current_location.xml" value="0.176" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/activity_weather_menu.xml" value="0.2463768115942029" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/hour_cell.xml" value="0.25181159420289856" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/item_event.xml" value="0.25181159420289856" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/item_logs.xml" value="0.22327898550724637" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/news_items.xml" value="0.24592391304347827" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/social_media_item.xml" value="0.24592391304347827" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/spinner_item.xml" value="0.259375" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/layout/weather_shimmer.xml" value="0.2" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1815" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+        <entry key="..\:/androidApp/TrvavelGuidAssistant/app/src/main/res/mipmap-xxhdpi/ic_launcher.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
