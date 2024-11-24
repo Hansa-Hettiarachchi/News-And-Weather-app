@@ -33,7 +33,7 @@
             android:includeFontPadding="false"
             android:text="@string/sign_up"
             android:textColor="@color/colorTextIcons"
-            android:textSize="@dimen/_12ssp"/>
+            android:textSize="@dimen/_12ssp" />
 
     </LinearLayout>
 
@@ -47,14 +47,18 @@
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/layoutHeader">
 
-        <ImageView
-            android:id="@+id/imageLogo"
-            android:layout_width="@dimen/_250sdp"
-            android:layout_height="@dimen/_50sdp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/logo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/layoutHeader" />
+        <TextView
+            android:id="@+id/textTitle2"
+            android:layout_width="244dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/sf_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="NEWS &amp; WEATHER APP"
+            android:textColor="@color/Black"
+            android:textSize="22dp"
+            tools:ignore="MissingConstraints" />
 
     </LinearLayout>
 
@@ -92,16 +96,15 @@
                     android:id="@+id/textSignInLable"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_8sdp"
                     android:layout_gravity="center"
-                    android:fontFamily="@font/sf_bold"
+                    android:layout_marginStart="@dimen/_8sdp"
                     android:includeFontPadding="false"
                     android:text="@string/sign_in_to_your_account"
                     android:textColor="@color/colorPrimaryText"
                     android:textSize="@dimen/_12ssp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/layoutHeader"/>
+                    app:layout_constraintTop_toBottomOf="@id/layoutHeader" />
 
             <LinearLayout
                 android:layout_marginTop="@dimen/_15sdp"

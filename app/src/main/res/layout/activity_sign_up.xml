@@ -62,7 +62,7 @@
                 android:fontFamily="@font/sf_bold"
                 android:gravity="center"
                 android:includeFontPadding="false"
-                android:text="@string/we_need_few_details_to_get_your_account_ready"
+                android:text="@string/Please_add_these_following_information"
                 android:textColor="@color/Black"
                 android:textSize="@dimen/_12ssp"/>
 

@@ -29,5 +29,5 @@ dependencyResolutionManagement {
         jcenter()
     }
 }
-rootProject.name = "TrvavelGuidAssistant"
+rootProject.name = "newsandweatherapp"
 include ':app'

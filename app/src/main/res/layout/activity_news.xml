@@ -52,7 +52,7 @@
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/news"
+            android:src="@drawable/news_1"
             android:layout_gravity="center"
             android:layout_marginEnd="4dp"
             android:contentDescription="@string/app_name" />
@@ -60,7 +60,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="News Corner"
+            android:text="News Updates"
             android:textColor="@color/colorPrimaryText"
             android:fontFamily="@font/sf_bold"
             android:textStyle="bold"
